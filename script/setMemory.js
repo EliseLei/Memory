@@ -1,3 +1,4 @@
+let counterTotal = 0;
 let counter = 0;
 let flippedCards = [];
 
@@ -10,9 +11,9 @@ function setMemory() {
     paire.click(function(event){
         event.preventDefault();
         $(this).children(".content").removeClass('hidden');
+    
         if(counter <= 2) {
             flippedCards.push($(this));
-            console.log(counter)
             counter++;
         }
 
@@ -23,7 +24,6 @@ function setMemory() {
                 flippedCards[1].addClass('bg-green-700');
             }
             else {
-                console.log("the card selected")
                 flippedCards.forEach(function(card) {
                     card.children(".content").removeClass('hidden');
                 });
@@ -32,8 +32,12 @@ function setMemory() {
                     paire.each(function(index) {
                         $(this).children(".content").addClass('hidden');
                     });
-            }, 1000);
+                }, 1000);
             }
+            
+            counterTotal++;
+            getCounter(counterTotal);
+
             flippedCards = [];
             counter = 0;
         }
