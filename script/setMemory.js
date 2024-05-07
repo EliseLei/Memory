@@ -4,24 +4,28 @@ let flippedCards = [];
 
 function setMemory() {
     const paire = $('.paire');
+
     paire.each(function(index) {
         $(this).addClass(`paire${index+1}`);
     });
 
     paire.click(function(event){
         event.preventDefault();
-        $(this).addClass('flipped');
-    
-        if(counter <= 2) {
-            flippedCards.push($(this));
-            counter++;
-        }
+        const currentCard = $(this);
+
+        currentCard.addClass('flipped');
+
+        flippedCards.push(currentCard);
+        counter++;
+
 
         if(counter === 2) {
             const classNames = flippedCards.map(card => card.attr('class').split(' ')[1]);
+            
             if(classNames[0] === classNames[1]){
-                flippedCards[0].addClass('bg-green-700 disabled');
-                flippedCards[1].addClass('bg-green-700 disabled');
+                flippedCards.forEach(function(card) {
+                    card.addClass('bg-green-700 disabled');
+                });
             }
             else {
                 setTimeout(function() {
