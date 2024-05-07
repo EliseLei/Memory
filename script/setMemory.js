@@ -10,7 +10,7 @@ function setMemory() {
 
     paire.click(function(event){
         event.preventDefault();
-        $(this).children(".content").removeClass('hidden');
+        $(this).addClass('flipped');
     
         if(counter <= 2) {
             flippedCards.push($(this));
@@ -20,21 +20,20 @@ function setMemory() {
         if(counter === 2) {
             const classNames = flippedCards.map(card => card.attr('class').split(' ')[1]);
             if(classNames[0] === classNames[1]){
-                flippedCards[0].addClass('bg-green-700');
-                flippedCards[1].addClass('bg-green-700');
+                flippedCards[0].addClass('bg-green-700 disabled');
+                flippedCards[1].addClass('bg-green-700 disabled');
             }
             else {
-                flippedCards.forEach(function(card) {
-                    card.children(".content").removeClass('hidden');
-                });
-                
                 setTimeout(function() {
                     paire.each(function(index) {
-                        $(this).children(".content").addClass('hidden');
+                        if(!$(this).hasClass('disabled')) {
+                            $(this).removeClass('flipped');
+                        }
                     });
                 }, 1000);
+
             }
-            
+
             counterTotal++;
             getCounter(counterTotal);
 

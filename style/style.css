@@ -4,3 +4,20 @@
 
 
 /*  npx tailwindcss build ./style/style.css -o output.css */
+.paire {
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    transform: rotateY(180deg);
+}
+
+.paire .content {
+    visibility: hidden;
+}
+
+.paire.flipped {
+    transform: rotateY(0deg);
+}
+
+.paire.flipped .content {
+    visibility: visible;
+}
