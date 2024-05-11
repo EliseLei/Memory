@@ -6,55 +6,33 @@
   <link rel="stylesheet" href="output.css">
   
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  <script src="./script/setCard.js"></script>
   <script src="./script/setMemory.js"></script>
   <script src="./script/getCounter.js"></script>
 </head>
 <body>
-    Memory
+    My memory
 
     <div class="flex">number of trials  <div id="counter"></div></div>
   
-   <div class="f-full flex flex-wrap gap-2">
-    <div class="paire paire1 w-1/4 border-2 h-10">
-        <div class="paire-inne">
-            <div class="content">mkdir</div>
-        </div>
-    </div>
-    <div class="paire paire1 w-1/4 border-2 h-10">
-        <div class="paire-inner">
-            <div class="content">mkdir</div>
-        </div>
-    </div>
-    <div class="paire paire2 w-1/4 border-2 h-10">
-        <div class="paire-inner">
-            <div class="content">console.log</div>
-        </div>
-    </div>
-    <div class="paire paire2 w-1/4 border-2 h-10">
-        <div class="paire-inner">
-            <div class="content">console.log</div>
-        </div>
-    </div>
-    <div class="paire paire3 w-1/4 border-2 h-10">
-        <div class="paire-inner">
-            <div class="content">ok</div>
-        </div>
-    </div>
-    <div class="paire paire3 w-1/4 border-2 h-10">
-        <div class="paire-inner">
-            <div class="content">ok</div>
-        </div>
-    </div>
-    <div class="paire paire4 w-1/4 border-2 h-10">
-        <div class="paire-inner">
-            <div class="content">tranquille par contre</div>
-        </div>
-    </div>
-    <div class="paire paire4 w-1/4 border-2 h-10">
-        <div class="paire-inner">
-            <div class="content">tranquille par contre</div>
-        </div>
-    </div>
-   </div> 
+    <div class="f-full flex flex-wrap gap-2" id="container"></div>
+
+   <script type="application/json" id="data">
+    [
+      { "paire": "paire1", "content": "mkdir" },
+      { "paire": "paire1", "content": "mkdir" },
+      { "paire": "paire2", "content": "console.log" },
+      { "paire": "paire2", "content": "console.log" },
+      { "paire": "paire3", "content": "ok" },
+      { "paire": "paire3", "content": "ok" },
+      { "paire": "paire4", "content": "tranquille par contre" },
+      { "paire": "paire4", "content": "tranquille par contre" },
+      { "paire": "paire5", "content": "firefox" },
+      { "paire": "paire5", "content": "firefox" },
+      { "paire": "paire6", "content": "feur" },
+      { "paire": "paire6", "content": "feur" }
+    ]
+  </script>
 </body>
 </html>
+

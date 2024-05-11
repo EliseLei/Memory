@@ -8,6 +8,7 @@
     transform-style: preserve-3d;
     transition: transform 0.5s;
     transform: rotateY(180deg);
+    @apply w-1/4 border-2 h-10;
 }
 
 .paire .content {
