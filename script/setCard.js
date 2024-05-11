@@ -1,7 +1,9 @@
 function generateHTML() {
     var container = document.getElementById("container");
-    var dataScript = document.getElementById("data");
-    var jsonData = JSON.parse(dataScript.textContent);
+
+    const data = $("#data").text();
+    const jsonData = JSON.parse(data);
+
     
     jsonData.forEach(function(item) {
       var div = document.createElement("div");
@@ -10,7 +12,7 @@ function generateHTML() {
       innerDiv.className = "paire-inner";
       var contentDiv = document.createElement("div");
       contentDiv.className = "content";
-      contentDiv.textContent = item.content;
+      contentDiv.textContent = item.content + " " + item.emoji; 
       innerDiv.appendChild(contentDiv);
       div.appendChild(innerDiv);
       container.appendChild(div);
